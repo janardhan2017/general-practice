@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<project name="AntJavaDirectory" basedir="." default="run">
+<target name="clean">
+<delete name="build/classes"/> 
+<delete name=build"/>
+
+</target>
+<target name="createdir" depends="clean">
+<mkdir dir="build"/>
+<mkdir dir="build/classess"/>
+</target>
+<target name="compile" depends="createdir">
+<javac srcdir="src" destdir="build/clasess"/>
+</target>
+<target name="run" depends="compile">
+<java classname="com.ant.test.Runner" classpath="build/classess">
+</target>
+</project>
